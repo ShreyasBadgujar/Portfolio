@@ -28,14 +28,14 @@ const Portfolio = () => {
       github: "https://github.com/ShreyasBadgujar/Doctor-appointment",
       live: "#"
     },
-    // {
-    //   title: "Mobile Fitness App",
-    //   description: "Cross-platform mobile app for workout tracking with social features and progress analytics.",
-    //   tech: ["React Native", "Firebase", "Redux", "Expo"],
-    //   image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop",
-    //   github: "#",
-    //   live: "#"
-    // }
+    {
+      title: "Mobile Fitness App",
+      description: "Cross-platform mobile app for workout tracking with social features and progress analytics.",
+      tech: ["React Native", "Firebase", "Redux", "Expo"],
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop",
+      github: "#",
+      live: "#"
+    }
   ];
 
   const skills = [
