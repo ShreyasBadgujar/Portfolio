@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, ChevronDown } from 'lucide-react';
-
+import Project1 from "./assets/project1.png"
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -16,7 +16,7 @@ const Portfolio = () => {
       title: "E-Commerce Platform",
       description: "A responsive E-Commerce website built with HTML, CSS, and JavaScript, featuring product browsing, cart management, and a smooth checkout simulation.",
       tech: ["HTML","CSS","Javascript"],
-      image: "src/assets/project1.png",
+      image: Project1,
       github: "https://github.com/ShreyasBadgujar/E-Commerce-Website",
       live: "https://e-commerce-website-seven-fawn.vercel.app/"
     },
@@ -29,22 +29,40 @@ const Portfolio = () => {
       live: "#"
     },
     {
-      title: "Mobile Fitness App",
-      description: "Cross-platform mobile app for workout tracking with social features and progress analytics.",
-      tech: ["React Native", "Firebase", "Redux", "Expo"],
+      title: "AI Story-Generator",
+      description: "Create unique stories instantly using the power of Google's Gemini API. Just enter a prompt, and let the AI turn your idea into a compelling narrative.",
+      tech: ["React", "Gemini Api"],
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop",
-      github: "#",
+      github: "https://github.com/ShreyasBadgujar/Ai-StoryGenarator.git",
       live: "#"
     }
   ];
 
-  const skills = [
-    { name: "React", level: 95 },
-    { name: "TypeScript", level: 90 },
-    { name: "Node.js", level: 85 },
-    { name: "Python", level: 80 },
-    { name: "AWS", level: 75 },
-    { name: "UI/UX Design", level: 88 }
+    const skills = [
+    { 
+      name: "React", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+    { 
+      name: "JavaScript", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+    },
+    { 
+      name: "Node.js", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+    },
+    { 
+      name: "C++", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+    },
+    { 
+      name: "Express", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+    },
+    { 
+      name: "MongoDB", 
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+    }
   ];
 
   return (
@@ -78,7 +96,7 @@ const Portfolio = () => {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['Home', 'About', 'Projects', 'Contact'].map((item) => (
+              {['Home', 'About', 'Projects'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -136,12 +154,6 @@ const Portfolio = () => {
               >
                 View My Work
               </a>
-              <a
-                href="#contact"
-                className="px-8 py-4 border-2 border-cyan-400 rounded-full text-cyan-400 font-semibold hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300"
-              >
-                Get In Touch
-              </a>
             </div>
           </div>
         </div>
@@ -162,10 +174,10 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-slate-300 leading-relaxed">
-                I'm a passionate full-stack developer with 5+ years of experience creating digital solutions that make a difference. I specialize in React, Node.js, and modern web technologies.
+                I'm a fresher MERN stack developer with a strong foundation in building full-stack web applications using MongoDB, Express.js, React, and Node.js. I’m also passionate about problem solving and regularly practice coding challenges in C++ to sharpen my algorithmic thinking.
               </p>
               <p className="text-lg text-slate-300 leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or mentoring aspiring developers.
+                When I’m not coding, I enjoy learning new technologies, contributing to beginner-friendly open source projects, and continuously improving my skills.
               </p>
               
               {/* Social Links */}
@@ -183,23 +195,21 @@ const Portfolio = () => {
             </div>
             
             {/* Skills */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-cyan-400 mb-6">Skills & Expertise</h3>
-              {skills.map((skill, index) => (
-                <div key={skill.name} className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-slate-300">{skill.name}</span>
-                    {/* <span className="text-cyan-400">{skill.level}%</span> */}
-                  </div>
-                  <div className="w-full bg-slate-700 rounded-full h-2">
-                    <div
-                      className="bg-gradient-to-r from-cyan-400 to-purple-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.level}%` }}
-                    /> 
-                  </div>
-                </div>
-              ))}
-            </div>
+            <div className="bg-slate-800 p-6 rounded-lg">
+      <div className="space-y-6">
+        <h3 className="text-2xl font-bold text-cyan-400 mb-6">Skills & Expertise</h3>
+        {skills.map((skill, index) => (
+          <div key={skill.name} className="flex items-center space-x-3 p-3 bg-slate-700 rounded-lg hover:bg-slate-600 transition-colors duration-200">
+            <img 
+              src={skill.logo} 
+              alt={`${skill.name} logo`}
+              className="w-8 h-8 object-contain"
+            />
+            <span className="text-slate-300 font-medium">{skill.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
           </div>
         </div>
       </section>
@@ -264,42 +274,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            Let's Work Together
-          </h2>
-          <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Let's create something amazing together.
-          </p>
-          
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-            <div className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-400">
-                  Your Name
-                </div>
-                <div className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-400">
-                  Your Email
-                </div>
-              </div>
-              <div className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-400">
-                Subject
-              </div>
-              <div className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-400 h-32 flex items-start">
-                Your Message
-              </div>
-              <button
-                onClick={() => alert('Thanks for your interest! This is a demo contact form.')}
-                className="w-full py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg text-white font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
-              >
-                Send Message
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-slate-700 text-center text-slate-400 relative z-10">
